@@ -1,11 +1,11 @@
-To submit, please, read the following and create your branch. Push as always, once your solution is ready - create a pull request. We will check it and let you know the results.
+To submit, please, read the following and create your fork. Push as always, once your solution is ready - create a pull request. We will check it and let you know the results.
 
 # Test Project:
 
   The idea is to create a very simple app which should display a minimalistic window and can <ins>work as a standalone Windows app and Revit add-in<ins>.
   
 ### Requirements:
-  The window should have <b>Text</b>, <b>Input</b> and <b>Button</b> controls. The window should look the same no matter how we open it, either from WPF.exe or from Revit command. The window should be scalable, window's Title should display the version of the add-in, parsed from this url: https://apps.autodesk.com/RVT/en/Detail/Index?id=3837838607913367957
+  The window should have <b>Text</b>, <b>Input</b> and <b>Button</b> controls. The window should look the same no matter how we open it, either from WPF.exe or from Revit command. The window should be scalable, window's Title should display the version of the add-in, parsed from [this url](https://apps.autodesk.com/RVT/en/Detail/Index?id=3837838607913367957).
 
   <b>Running standalone</b>: Text field should display what user types in Input, initial content doesn’t matter. Button should launch Revit if it’s installed on the PC and close the window.
   
