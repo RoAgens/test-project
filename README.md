@@ -22,3 +22,4 @@ To submit, please, read the following and create your fork. Push as always, once
 -	Use of WPF patterns
 - Reliability of getting and parsing live add-in version number
 -	Understanding of Revit API and basic 3D principles
+-	Git workflow experience
