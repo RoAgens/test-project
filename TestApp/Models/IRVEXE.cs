@@ -11,7 +11,7 @@ namespace TestApp.Models
         string TitleValue { get; set; }
         string LabelContent { get; set; }
         string TextBoxValue { get; set; }
-        string ButtonText { get; set; }
+        string ButtonContent { get; set; }
         Action ToDo();
     }
 }

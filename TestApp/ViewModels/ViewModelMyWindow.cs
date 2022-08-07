@@ -25,6 +25,7 @@ namespace TestApp.ViewModels
         {
             _difClass = difClass;
             _mainWindow.Title = _difClass.TitleValue;
+            _mainWindow.myButton.Content = _difClass.ButtonContent;
             ButtonAction = _difClass.ToDo();
             if (_difClass is Revit)
             {

@@ -28,7 +28,7 @@ namespace TestApp.Models
         public string TitleValue { get; set; }
         public string LabelContent { get; set; } = "Введите текст...";
         public string TextBoxValue { get; set; } = "Введите текст...";
-        public string ButtonText { get; set; } = "Запустить Revit";
+        public string ButtonContent { get; set; } = "Запустить Revit";
 
         private void RevitStart() => Process.Start(GetRevit());
 

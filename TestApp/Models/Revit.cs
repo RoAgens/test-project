@@ -24,7 +24,7 @@ namespace TestApp.Models
         public string TitleValue { get; set; } = "RevitApp by RoAgens";
         public string LabelContent { get; set; }
         public string TextBoxValue { get; set; }
-        public string ButtonText { get; set; } = "Сохранить Revit как...";
+        public string ButtonContent { get; set; } = "Сохранить Revit как...";
 
         /// <summary>
         /// Сохранение Revit с новым именем
