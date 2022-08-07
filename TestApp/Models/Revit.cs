@@ -31,7 +31,14 @@ namespace TestApp.Models
         /// </summary>
         private void SaveAs()
         {
-            _doc.SaveAs(Path.Combine(Path.GetDirectoryName(_doc.PathName), $"{TextBoxValue}.rvt"));
+            try
+            {
+                _doc.SaveAs(Path.Combine(Path.GetDirectoryName(_doc.PathName), $"{TextBoxValue}.rvt"));
+            }
+            catch
+            {
+
+            }
         }
 
         Action IRVEXE.ToDo()
