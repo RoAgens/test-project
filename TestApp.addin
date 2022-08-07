@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>TestApp.exe</Assembly>
+    <ClientId>6601fd79-2396-4dd0-9603-96e70929fa21</ClientId>
+    <FullClassName>TestApp.IExternalCommands.RevitTestApp</FullClassName>
+    <Text>RevitTestApp</Text>
+    <Description>""</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>RoAgens</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
