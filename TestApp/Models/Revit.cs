@@ -46,6 +46,9 @@ namespace TestApp.Models
             return new Action(SaveAs);
         }
 
+        /// <summary>
+        /// Имя документа Revit
+        /// </summary>
         private string DocName => Path.GetFileNameWithoutExtension(_doc.PathName);
 
         /// <summary>
