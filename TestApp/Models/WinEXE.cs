@@ -38,28 +38,33 @@ namespace TestApp.Models
         /// <returns></returns>
         private static string GetRevit()
         {
-            // дикие костыли
-            // string uninstallKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"; не помогло
-            // использование WMI не помогло
+            string value64 = string.Empty;
+            RegistryKey autodeskRegKey = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
+            autodeskRegKey = autodeskRegKey.OpenSubKey("SOFTWARE\\Autodesk");
 
-            string curFile = null;
+            var revitsRegKey = autodeskRegKey?.OpenSubKey("Revit");
+            var list1 = revitsRegKey.GetSubKeyNames();
 
-            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Autodesk\Revit");
-
-            // находим первый установленный ревит
-            string searchRevitVersion = key.GetSubKeyNames().Where(x => x.Contains("Autodesk Revit")).FirstOrDefault();
-
-            if (searchRevitVersion != null)
+            try
             {
-                curFile = $@"C:\Program Files\Autodesk\Revit {searchRevitVersion.Split(' ')[2]}\Revit.exe";
-
-                if (!File.Exists(curFile))
+                foreach (string str in list1)
                 {
-                    curFile = $@"D:\Program Files\Autodesk\Revit {searchRevitVersion.Split(' ')[2]}\Revit.exe";
+                    var refKey = revitsRegKey?.OpenSubKey(str);
+                    var list2 = refKey.GetSubKeyNames();
+
+                    foreach (string str1 in list2.Where(x => x.Split('-')[0] == "REVIT"))
+                    {
+                        var refSubKey = refKey?.OpenSubKey(str1);
+                        return $"{refSubKey.GetValue("InstallationLocation", string.Empty).ToString()}revit.exe";
+                    }
                 }
             }
+            catch
+            {
+                return null;
+            }
 
-            return curFile;
+            return null;
         }
 
         /// <summary>
